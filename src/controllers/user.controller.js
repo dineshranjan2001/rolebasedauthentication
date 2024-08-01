@@ -50,6 +50,7 @@ const loginUserDetails=async(req,res)=>{
             userId: loginDetails.id,
             email: loginDetails.email,
             roleId: loginDetails.roleId,
+            roleName:loginDetails?.role.roleName,
             permissions:loginDetails.permissions
         }
         const authToken = jwt.sign(user,"1$#2X!h4LpQZ3vB5wY8DkGnMqTmW9zA1d", { expiresIn: "1hour" });
