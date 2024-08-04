@@ -16,8 +16,8 @@ const createRoleDetails=async (req,res)=>{
 }
 
 const createUserDetails=async (req,res)=>{
-    const {name,email,password,roleId,permissions}=req.body;
-    const createdUserDetails=await createUserDetailsDetailsService({name,email,password,roleId},permissions);
+    const {name,email,password,phoneNumber,roleId,permissions}=req.body;
+    const createdUserDetails=await createUserDetailsDetailsService({name,email,password,phoneNumber,roleId},permissions);
     (createdUserDetails)? res.status(201).json({
         data:createdUserDetails,
         statusCode:201,
@@ -80,8 +80,8 @@ const getUserDetailsByuserId=async(req,res)=>{
 
 const updateUserDetails=async(req,res)=>{
     const userId=req.params.userId;
-    const {name,email,password,roleId,permissions}=req.body; 
-    const updateDetails=await updateUserDetailsService(userId,{name,email,password,roleId},permissions);
+    const {name,email,password,phoneNumber,roleId,permissions}=req.body; 
+    const updateDetails=await updateUserDetailsService(userId,{name,email,password,phoneNumber,roleId},permissions);
     (updateDetails)? res.status(200).json({
         data:updateDetails,
         statusCode:200,

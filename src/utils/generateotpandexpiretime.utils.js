@@ -5,7 +5,7 @@ const generateOTP=()=>{
 
     // otp expire within 1 minutes
     const otpExpier = new Date();
-    otpExpier.setMinutes(otpExpier.getMinutes() + 1);
+    otpExpier.setMinutes(otpExpier.getMinutes() + 5);
 
     //return otp and otpexpire time
     return {otp,otpExpier};

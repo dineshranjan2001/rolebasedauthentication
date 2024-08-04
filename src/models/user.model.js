@@ -15,6 +15,10 @@ const UserDetails=sequelize.define("UserDetails",{
         type:DataTypes.STRING,
         allowNull:false, 
     },
+    phoneNumber:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
     password:{
         type:DataTypes.STRING,
         allowNull:false

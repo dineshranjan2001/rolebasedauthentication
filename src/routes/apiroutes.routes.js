@@ -4,6 +4,7 @@ const { verifyToken } = require("../middlewares/verifytoken.middleware");
 const { checkPermission } = require("../middlewares/rbac.middleware");
 const { roleBasedAccess } = require("../middlewares/rolebaseaccess.middleware");
 const { forgotPassword, resetPassword } = require("../controllers/forgotandresetpasswordandotpsendtomail.controller");
+const { forgotPasswordInMobileNumber, resetPasswordInMobileNumber } = require("../controllers/forgotandresetpasswordandotpsendtomobilenumber.controller");
 
 const apiRoutes=express.Router();
 
@@ -15,5 +16,7 @@ apiRoutes.put("/updateUserDetails/:userId",verifyToken,checkPermission("update")
 
 apiRoutes.post("/forgotpassword",forgotPassword);
 apiRoutes.post("/resetpassword",resetPassword);
+apiRoutes.post("/forgotpasswordformobile",forgotPasswordInMobileNumber);
+apiRoutes.post("/resetpasswordformobile",resetPasswordInMobileNumber);
 
 module.exports=apiRoutes;
