@@ -48,8 +48,8 @@ const resetPasswordService=async(newPassword,confirmPassword,otp)=>{
         attributes:['otp']
     });
 
-    // check the otp is present or not
-    if(!getOtp){
+    // check the otp is present or not and compare the otp
+    if(!getOtp && getOtp?.otp!==otp){
         return 1;
     }
 
