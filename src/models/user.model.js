@@ -19,6 +19,14 @@ const UserDetails=sequelize.define("UserDetails",{
         type:DataTypes.STRING,
         allowNull:false
     },
+    otp:{
+        type:DataTypes.INTEGER,
+        allowNull:true
+    },
+    otpExpire:{
+        type:DataTypes.TIME,
+        allowNull:true
+    }
 },{
     tableName:"user_details",
     timestamps:true,

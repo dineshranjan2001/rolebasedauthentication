@@ -75,7 +75,7 @@ const updateUserDetailsService=async(userId,updatedUserDetails,updatedPermission
     getUserDetails.permissions.readPermission=updatedPermissionDetails.readPermission;
     getUserDetails.permissions.updatePermission=updatedPermissionDetails.updatePermission;
     getUserDetails.permissions.deletePermission=updatedPermissionDetails.deletePermission;
-    const updatePermissionDetails=await getUserDetails.permissions.save();
+    await getUserDetails.permissions.save();
 
     const updateUserDetails=await getUserDetails.update(updatedUserDetails);
     return {updateUserDetails};
